@@ -1,38 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import getImage from '../../apiCalls';
 import Home from '../Home/Home';
-import Error from '../Error/Error';
+import SavedCards from '../SavedCards/SavedCards.jsx';
+import Error from '../Error404/Error404.jsx';
 
 function App() {
-  const [image, setImage] = useState(null);
-  const [error, setError] = useState('');
+  const [cards, setCards] = useState([]);
 
-  useEffect(() => {
-    console.log('Component mounted');
-  
-    getImage().then(data => {
-      setImage(data["1"]);
-    }).catch(err => {
-      setError('Failed to fetch image');
-      console.error(err);
-    });
-  
-    return () => {
-      console.log('Component unmounted');
-    };
-  }, []);
-  
-
-  if (error) return <div>{error}</div>;
-  if (!image) return <div>Loading...</div>;
+  const addCard = (card) => {
+    setCards((prevCards) => [...prevCards, card]);
+  };
 
   return (
     <main className='App'>
-      <h1>Disney Vacation</h1>
       <Routes>
-        <Route path='/' element={<Home image={image} />} />
+        <Route path='/' element={<Home addCard={addCard} />} />
+        <Route path='/saved-cards' element={<SavedCards cards={cards} />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </main>

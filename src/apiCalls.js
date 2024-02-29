@@ -7,7 +7,6 @@ export default async function getImage() {
       'X-RapidAPI-Host': 'hargrimm-wikihow-v1.p.rapidapi.com'
     }
   };
-  console.log("Fetching data from API...");
 
   try {
  
@@ -18,7 +17,6 @@ export default async function getImage() {
     }
 
     const result = await response.json();
-    console.log("Parsed JSON result:", result);
     return result;
   } catch (error) {
     console.error("Error fetching data:", error);

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
 import getImage from '../../apiCalls';
 import Form from "../Form/Form";
 import PropTypes from 'prop-types';
@@ -7,20 +6,21 @@ import PropTypes from 'prop-types';
 function Home({ addCard }) {
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
+    fetchNewImage();
+  }, []);
+
+  const fetchNewImage = () => {
     getImage().then(data => {
       setImage(data["1"]);
     }).catch(err => {
-      setError('Failed to fetch image');
-      console.error(err);
+      if (err.response && err.response.status === 404) {
+        setError('Image not found. Please try again.');
+      } else {
+        setError('Failed to fetch new image. Please try again.');
+      }
     });
-  }, []);
-
-  const handleFormSubmit = (cardData) => {
-    addCard(cardData);
-    navigate('/saved-cards');
   };
 
   if (error) return <div>{error}</div>;
@@ -28,7 +28,7 @@ function Home({ addCard }) {
 
   return (
     <div>
-      <Form onSubmit={handleFormSubmit} image={image} />
+      <Form onSubmit={addCard} image={image} fetchNewImage={fetchNewImage} />
     </div>
   );
 }
@@ -38,4 +38,3 @@ Home.propTypes = {
 };
 
 export default Home;
-

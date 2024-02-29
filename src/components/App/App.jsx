@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from '../Home/Home';
+import Home from '../Home/Home.jsx';
 import SavedCards from '../SavedCards/SavedCards.jsx';
 import Error from '../Error404/Error404.jsx';
 
@@ -12,6 +12,10 @@ function App() {
     setCards((prevCards) => [...prevCards, card]);
   };
 
+  useEffect(() => {
+    console.log(cards[0]);
+  }, [cards]);
+  
   return (
     <main className='App'>
       <Routes>

@@ -1,20 +1,29 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import './Form.css';
 
-function Form({ onSubmit, image }) {
+function Form({ onSubmit, image, fetchNewImage }) {
   const [caption, setCaption] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSaveAndCreateNew = (event) => {
     event.preventDefault();
     onSubmit({ image, caption });
     setCaption('');
+    fetchNewImage();
+  };
+
+  const handleSaveAndViewAll = (event) => {
+    event.preventDefault();
+    onSubmit({ image, caption });
+    navigate('/saved-cards');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <img src={image} alt="Submit" style={{ maxWidth: '100%', height: 'auto' }} />
+    <form onSubmit={(event) => event.preventDefault()}>
+      <img src={image} alt="" className="form-image" />
       <div>
-        <label htmlFor="captionInput">Caption:</label>
         <input
           id="captionInput"
           type="text"
@@ -23,7 +32,8 @@ function Form({ onSubmit, image }) {
           placeholder="Enter a caption"
         />
       </div>
-      <button type="submit">Submit</button>
+      <button onClick={handleSaveAndCreateNew}>Save and Create New</button>
+      <button onClick={handleSaveAndViewAll}>Save and View All</button>
     </form>
   );
 }
@@ -31,6 +41,7 @@ function Form({ onSubmit, image }) {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   image: PropTypes.string.isRequired,
+  fetchNewImage: PropTypes.func.isRequired,
 };
 
 export default Form;

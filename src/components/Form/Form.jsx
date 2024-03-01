@@ -1,11 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import getImage from '../../apiCalls';
 import './Form.css';
 
-function Form({ onSubmit, image, fetchNewImage }) {
+function Form({ onSubmit, errorMessage }) {
   const [caption, setCaption] = useState('');
+  const [image, setImage] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchNewImage();
+  }, []);
+
+  const fetchNewImage = () => {
+    getImage().then(data => {
+      setImage(data["1"]);
+      setError('');
+    }).catch(err => {
+      const errorMsg = err.response && err.response.status === 404 ? 'Image not found. Please try again.' : 'Failed to fetch new image. Please try again.';
+      setError(errorMsg);
+    });
+  };
 
   const handleSaveAndCreateNew = (event) => {
     event.preventDefault();
@@ -24,29 +41,36 @@ function Form({ onSubmit, image, fetchNewImage }) {
     navigate('/saved-cards');
   };
 
+  if (error) return <div>{error}</div>;
+  if (!image) return <div>Loading...</div>;
+
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
-      <img src={image} alt="" className="form-image" />
-      <div>
-        <input
-          id="captionInput"
-          type="text"
-          value={caption}
-          onChange={(e) => setCaption(e.target.value)}
-          placeholder="Enter a caption"
-        />
-      </div>
-      <button onClick={handleSaveAndCreateNew}>Save and Create New</button>
-      <button onClick={handleSaveAndViewAll}>Save and View All</button>
-      <button type="button" onClick={handleViewSavedCardsOnly}>View Saved Cards</button> {/* New button for navigation */}
-    </form>
+    <div className="form-container">
+  <form onSubmit={(event) => event.preventDefault()}>
+    <img src={image} alt="" className="form-image" />
+    <input
+      id="captionInput"
+      type="text"
+      value={caption}
+      onChange={(e) => setCaption(e.target.value)}
+      placeholder="Enter a caption"
+      className="form-input"
+    />
+    <div className="button-group">
+      <button className="form-button" onClick={handleSaveAndCreateNew}>Save and Create New</button>
+      <button className="form-button" onClick={handleSaveAndViewAll}>Save and View All</button>
+      <button className="form-button" type="button" onClick={handleViewSavedCardsOnly}>View Saved Cards</button>
+    </div>
+    {errorMessage && <div className="error-message">{errorMessage}</div>}
+  </form>
+</div>
+
   );
 }
 
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  image: PropTypes.string.isRequired,
-  fetchNewImage: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string,
 };
 
 export default Form;

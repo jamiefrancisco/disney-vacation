@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../Home/Home.jsx';
+import Form from '../Form/Form';
 import SavedCards from '../SavedCards/SavedCards.jsx';
 import EditCaption from '../EditCaption/EditCaption.jsx';
 import Error from '../Error404/Error404.jsx';
@@ -28,11 +28,11 @@ function App() {
     });
     setCards(updatedCards);
   };
-  
+
   return (
     <main className='App'>
       <Routes>
-        <Route path='/' element={<Home addCard={addCard} errorMessage={errorMessage} />} />
+        <Route path='/' element={<Form onSubmit={addCard} errorMessage={errorMessage} />} />
         <Route path='/saved-cards' element={<SavedCards cards={cards} />} />
         <Route path="/edit-caption" element={<EditCaption onSave={onSave} />} />
         <Route path='*' element={<Error />} />

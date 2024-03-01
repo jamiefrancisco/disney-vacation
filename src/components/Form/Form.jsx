@@ -20,6 +20,10 @@ function Form({ onSubmit, image, fetchNewImage }) {
     navigate('/saved-cards');
   };
 
+  const handleViewSavedCardsOnly = () => {
+    navigate('/saved-cards');
+  };
+
   return (
     <form onSubmit={(event) => event.preventDefault()}>
       <img src={image} alt="" className="form-image" />
@@ -34,6 +38,7 @@ function Form({ onSubmit, image, fetchNewImage }) {
       </div>
       <button onClick={handleSaveAndCreateNew}>Save and Create New</button>
       <button onClick={handleSaveAndViewAll}>Save and View All</button>
+      <button type="button" onClick={handleViewSavedCardsOnly}>View Saved Cards</button> {/* New button for navigation */}
     </form>
   );
 }

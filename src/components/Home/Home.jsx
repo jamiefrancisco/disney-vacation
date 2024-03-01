@@ -3,7 +3,7 @@ import getImage from '../../apiCalls';
 import Form from "../Form/Form";
 import PropTypes from 'prop-types';
 
-function Home({ addCard }) {
+function Home({ addCard, errorMessage }) {
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
 
@@ -29,12 +29,14 @@ function Home({ addCard }) {
   return (
     <div>
       <Form onSubmit={addCard} image={image} fetchNewImage={fetchNewImage} />
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     </div>
   );
 }
 
 Home.propTypes = {
   addCard: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string 
 };
 
 export default Home;

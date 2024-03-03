@@ -4,6 +4,7 @@ import Form from '../Form/Form';
 import SavedCards from '../SavedCards/SavedCards.jsx';
 import EditCaption from '../EditCaption/EditCaption.jsx';
 import Error from '../Error404/Error404.jsx';
+import './App.css';
 
 function App() {
   const [cards, setCards] = useState([]);

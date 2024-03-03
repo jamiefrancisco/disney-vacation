@@ -1,53 +1,146 @@
-.saved-cards-page {
+.saved-cards-page-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
+.saved-cards-page {
+  background-color: #DAE0E6;
+  padding: 20px;
+  width: 90vw;
+  max-width: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  text-align: center;
+  width: 100%;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+}
+
+.form-title .first-word {
+  color: #444F45;
+}
+
+.form-title .second-word {
+  color: #FFFFFF;
+}
+
+.form-instructions {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: black;
+  padding: 0 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
 .back-to-home-button {
-  display: inline-block;
+  display: block;
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #44884D;
   border: none;
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin: 20px auto;
 }
 
 .back-to-home-button:hover {
-  background-color: #0056b3;
+  background-color: #3a7240;
 }
 
 .saved-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
   padding: 20px;
+  width: 100%;
+  max-width: none;
 }
 
 .card {
-  flex: 0 1 calc(20% - 30px);
+  height: auto;
+  border: 3px solid #000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background-color: #fff;
 }
 
-@media (max-width: 1024px) {
-  .card {
-    flex: 0 1 calc(33.333% - 30px);
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card p {
+  margin: 15px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.saved-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.no-saved-cards-message {
+  font-size: 1.2rem;
+  color: black;
+  padding: 0 2rem;
+  max-width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  font-family: "IBM Plex Serif", serif;
+}
+
+@media (max-width: 3000px) {
+  .saved-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .card {
-    flex: 0 1 calc(50% - 30px);
+@media (max-width: 1200px) {
+  .saved-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
-  .card {
-    flex: 0 1 calc(100% - 30px);
+@media (max-width: 800px) {
+  .saved-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .saved-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 200px) {
+  .saved-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }

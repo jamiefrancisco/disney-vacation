@@ -45,24 +45,32 @@ function Form({ onSubmit, errorMessage }) {
   if (!image) return <div>Loading...</div>;
 
   return (
-    <div className="form-container">
-  <form onSubmit={(event) => event.preventDefault()}>
-    <img src={image} alt="" className="form-image" />
-    <input
-      id="captionInput"
-      type="text"
-      value={caption}
-      onChange={(e) => setCaption(e.target.value)}
-      placeholder="Enter a caption"
-      className="form-input"
-    />
-    <div className="button-group">
-      <button className="form-button" onClick={handleSaveAndCreateNew}>Save and Create New</button>
-      <button className="form-button" onClick={handleSaveAndViewAll}>Save and View All</button>
-      <button className="form-button" type="button" onClick={handleViewSavedCardsOnly}>View Saved Cards</button>
-    </div>
-    {errorMessage && <div className="error-message">{errorMessage}</div>}
-  </form>
+<div className="content-wrapper">
+  <h1 className="form-title"><span className="first-word">Disney</span><span className="second-word">Vacation</span></h1>
+  <p className="form-instructions">
+    This app allows you to generate random wikiHow illustrations and create your own funny captions. Perfect for creating content to be submitted to the subreddit /r/DisneyVacation. You can also view and edit your saved creations on another page.
+  </p>
+
+  <div className="form-container">
+  <button className="form-button" type="button" onClick={handleViewSavedCardsOnly}>View Saved Captions</button>
+    <form onSubmit={(event) => event.preventDefault()}>
+      <img src={image} alt="" className="form-image" />
+      <input
+        id="captionInput"
+        type="text"
+        value={caption}
+        onChange={(e) => setCaption(e.target.value)}
+        placeholder="Enter a caption"
+        className="form-input"
+      />
+      <div className="button-group">
+        <button className="form-button" onClick={handleSaveAndCreateNew}>Save and Create New</button>
+        <button className="form-button" onClick={handleSaveAndViewAll}>Save and View All</button>
+    
+      </div>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+    </form>
+  </div>
 </div>
 
   );

@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
 import './Card.css';
+import { useNavigate } from 'react-router-dom';
 
 function Card({ image, caption }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/edit-caption', { state: { image, caption } });
+  };
+
   return (
-    <div className="card">
-      <img src={image} alt={caption} />
+    <div className="card" onClick={handleClick}> 
+      <img src={image} alt="Card" />
       <p>{caption}</p>
     </div>
   );

@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Disney Vacation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### What is it?
+- Disney Vacation is an easy way for users to create hilarious content to post on https://www.reddit.com/r/disneyvacation/
+- This is my final showcase project for Mod 3 @ Turing
+- The main goals of this project were to showcase my skills building a React app from zero to a usable MVP that served a niche audience
 
-## Available Scripts
+### Technologies Used
+- React
+- Data fetched from https://rapidapi.com/hargrimm/api/wikihow
+- Testing with Cypress
+- Deployed with Vercel
 
-In the project directory, you can run:
+### Wins & Challenges
+- Brainstorming an extremely niche idea where I can geniunely add value to a specific group
+- Working on CSS responsiveness (check it out for yourself!)
 
-### `npm start`
+### Where to see it?
+- The app is deployed at https://disney-vacation.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### How to see it locally?
+- Clone down this repo `git clone git@github.com:jamiefrancisco/disney-vacation.git`
+- Install dependencies `npm i`
+- Start it up `npm start`
+- You can view it at `http://localhost:3000/`
+- Run tests using Cypress `npm run cypress`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Preview
+![Gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ253aHF6M3dqbWo0czRyOGpmYndpMnB5NTliNzhxcnMyN2p2NHlhMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iZwf8En5IASaOH6WYx/giphy.gif)
+### Contributors
+Jamie Francisco @jamiefrancisco https://github.com/jamiefrancisco

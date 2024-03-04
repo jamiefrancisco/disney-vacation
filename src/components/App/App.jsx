@@ -4,6 +4,7 @@ import Form from '../Form/Form';
 import SavedCards from '../SavedCards/SavedCards.jsx';
 import EditCaption from '../EditCaption/EditCaption.jsx';
 import Error from '../Error404/Error404.jsx';
+import ErrorPotato from '../Error404/ErrorPotato.jsx'
 import './App.css';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
         <Route path='/saved-cards' element={<SavedCards cards={cards} />} />
         <Route path="/edit-caption" element={<EditCaption onSave={onSave} />} />
         <Route path='*' element={<Error />} />
+        <Route path='/potato' element={<ErrorPotato />} />
+        <Route path='/potatoe' element={<ErrorPotato />} />
+        <Route path='/potatoes' element={<ErrorPotato />} />
       </Routes>
     </main>
   );

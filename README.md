@@ -23,7 +23,7 @@
 - Install dependencies `npm i`
 - Start it up `npm start`
 - You can view it at `http://localhost:3000/`
-- Run tests using Cypress `npm run cypress`
+- Run tests using Cypress `npm i cypress --save-dev` `npm run cypress`
 
 ### Preview
 ![Gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ253aHF6M3dqbWo0czRyOGpmYndpMnB5NTliNzhxcnMyN2p2NHlhMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iZwf8En5IASaOH6WYx/giphy.gif)

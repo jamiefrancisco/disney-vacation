@@ -12,7 +12,7 @@ function Card({ image, caption, style }) {
   return (
     <div className="card" style={style} onClick={handleClick}> 
       <img src={image} alt="Card" />
-      <p>{caption}</p>
+      <p className="caption">{caption}</p>
     </div>
   );
 }

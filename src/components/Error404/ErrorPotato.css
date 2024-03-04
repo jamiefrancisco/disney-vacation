@@ -1,5 +1,5 @@
-.error-container {
- background-image: url('https://www.wikihow.com/images/thumb/b/b1/Apologize-to-a-Teacher-Step-11.jpg/v4-460px-Apologize-to-a-Teacher-Step-11.jpg');
+.potato-error-container {
+  background-image: url('https://www.wikihow.life/images/thumb/2/2b/Harvest-Potatoes-Step-3-Version-2.jpg/aid12507744-v4-728px-Harvest-Potatoes-Step-3-Version-2.jpg.webp');
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -14,4 +14,3 @@
   color: white;
   text-align: center;
 }
-

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function SavedCards({ cards }) {
-  const cardStyle = cards.length === 1 || cards.length === 2 ? { maxWidth: '380px', margin: '0 auto' } : {};
+  const cardStyle = cards.length === 1 || cards.length === 2 ? { maxWidth: '480px', margin: '0 auto' } : {};
 
   return (
     <div className="saved-cards-page-wrapper">
@@ -45,6 +45,10 @@ SavedCards.propTypes = {
       caption: PropTypes.string.isRequired,
     })
   ).isRequired,
+};
+
+SavedCards.defaultProps = {
+  cards: [],
 };
 
 export default SavedCards;

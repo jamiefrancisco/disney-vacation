@@ -81,4 +81,9 @@ Form.propTypes = {
   errorMessage: PropTypes.string,
 };
 
+Form.defaultProps = {
+  errorMessage: '',
+};
+
+
 export default Form;

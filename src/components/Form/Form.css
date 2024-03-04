@@ -54,7 +54,7 @@
   height: auto;
   margin: 0 auto 2rem;
   margin-top: 2rem;
-  border: 5px solid #000;
+  border: 5px solid #93B874;
 }
 
 .form-input {
@@ -68,6 +68,7 @@
   box-sizing: border-box;
   background-color: #FFFFFF;
   color: #444F45;
+  outline: 2px solid #93B874;
 }
 
 .form-button {
